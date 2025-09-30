@@ -182,75 +182,79 @@
 <!-- Examples Section -->
 <section class="section">
   <div class="container is-max-desktop">
-    <div style="display: flex; flex-direction: column; gap: 3rem; max-width: 1200px; margin: 0 auto;">
-      <!-- Example 1 -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
-        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
-          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Question</h3>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);">What is 2 + 2?</p>
-        </div>
-        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
-          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Reasoning in Cipher (ROT13)</h3>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Gur nafjre vf 4.</p>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
-            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">The answer is 4.</p>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <!-- Example Container -->
+      <div id="example-container">
+        <!-- Example 1 -->
+        <div class="example-row" data-example="0" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+          <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+            <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Question</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);">What is 2 + 2?</p>
+          </div>
+          <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+            <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Reasoning in Cipher (ROT13)</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Gur nafjre vf 4.</p>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+              <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">The answer is 4.</p>
+            </div>
+          </div>
+          <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+            <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Decoding Cipher (ROT13)</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Jung vf 2 + 2?</p>
           </div>
         </div>
-        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
-          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Decoding Cipher (ROT13)</h3>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Jung vf 2 + 2?</p>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
-            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">What is 2 + 2? The answer is 4.</p>
+
+        <!-- Example 2 -->
+        <div class="example-row" data-example="1" style="display: none; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+          <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+            <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Question</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);">If Alice has 3 apples and Bob gives her 5 more, how many apples does Alice have?</p>
+          </div>
+          <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+            <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Reasoning in Cipher (ROT13)</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Nyvpr unf 3 + 5 = 8 nccyrf.</p>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+              <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">Alice has 3 + 5 = 8 apples.</p>
+            </div>
+          </div>
+          <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+            <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Decoding Cipher (ROT13)</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Vs Nyvpr unf 3 nccyrf naq Obo tvirf ure 5 zber, ubj znal nccyrf qbrf Nyvpr unir?</p>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="example-row" data-example="2" style="display: none; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+          <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+            <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Question</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);">Solve: x + 5 = 12</p>
+          </div>
+          <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+            <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Reasoning in Cipher (ROT13)</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">k + 5 = 12, fb k = 12 - 5 = 7.</p>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+              <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">x + 5 = 12, so x = 12 - 5 = 7.</p>
+            </div>
+          </div>
+          <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+            <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Decoding Cipher (ROT13)</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Fbyir: k + 5 = 12</p>
           </div>
         </div>
       </div>
-      <!-- Example 2 -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
-        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
-          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Question</h3>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);">If Alice has 3 apples and Bob gives her 5 more, how many apples does Alice have?</p>
-        </div>
-        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
-          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Reasoning in Cipher (ROT13)</h3>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Nyvpr unf 3 + 5 = 8 nccyrf.</p>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
-            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">Alice has 3 + 5 = 8 apples.</p>
-          </div>
-        </div>
-        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
-          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Decoding Cipher (ROT13)</h3>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Vs Nyvpr unf 3 nccyrf naq Obo tvirf ure 5 zber, ubj znal nccyrf qbrf Nyvpr unir?</p>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
-            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">If Alice has 3 apples and Bob gives her 5 more, how many apples does Alice have? Alice has 8 apples.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Example 3 -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
-        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
-          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Question</h3>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);">Solve: x + 5 = 12</p>
-        </div>
-        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
-          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Reasoning in Cipher (ROT13)</h3>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">k + 5 = 12, fb k = 12 - 5 = 7.</p>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
-            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">x + 5 = 12, so x = 12 - 5 = 7.</p>
-          </div>
-        </div>
-        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
-          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Decoding Cipher (ROT13)</h3>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Fbyir: k + 5 = 12</p>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
-            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">Solve: x + 5 = 12. The answer is x = 7.</p>
-          </div>
-        </div>
+
+      <!-- Navigation Buttons -->
+      <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin-top: 2rem;">
+        <button onclick="changeExample(-1)" style="padding: 0.75rem 1.5rem; background: var(--primary-color); color: white; border: none; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; cursor: pointer; font-size: 0.9rem;">
+          ← Previous
+        </button>
+        <span id="example-indicator" style="font-size: 0.9rem; color: var(--text-secondary);">1 / 3</span>
+        <button onclick="changeExample(1)" style="padding: 0.75rem 1.5rem; background: var(--primary-color); color: white; border: none; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; cursor: pointer; font-size: 0.9rem;">
+          Next →
+        </button>
       </div>
     </div>
     <p style="font-size: 0.95rem; line-height: 1.7; margin-top: 3rem; color: var(--text-secondary); max-width: 800px; margin-left: auto; margin-right: auto; text-align: center;">
@@ -264,7 +268,7 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3">Try It Yourself</h2>
     <p style="margin-bottom: 1em;">Enter your question and copy the prompts into <a href="https://console.anthropic.com/workbench" style="color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border-color); transition: var(--transition);">Claude Workbench</a> to try it yourself!</p>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; width: 64em;">
+    <div class="try-it-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; width: 64em;">
       <!-- Input Section -->
       <div>
         <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">Your Question</h3>
@@ -311,7 +315,7 @@
     <!-- Decode Output Section -->
     <div style="margin-top: 4rem; border-top: 1px solid var(--border-color); padding-top: 3rem;">
       <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--text-primary);">Decode Claude's Response</h3>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+      <div class="decode-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
         <!-- Cipher Input -->
         <div>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
@@ -529,6 +533,25 @@
     <!-- End of Statcounter Code -->
 
   <script>
+    // Example navigation
+    let currentExample = 0;
+    const totalExamples = 3;
+
+    function changeExample(direction) {
+      // Hide current example
+      const examples = document.querySelectorAll('.example-row');
+      examples[currentExample].style.display = 'none';
+
+      // Update current example index
+      currentExample = (currentExample + direction + totalExamples) % totalExamples;
+
+      // Show new example
+      examples[currentExample].style.display = 'grid';
+
+      // Update indicator
+      document.getElementById('example-indicator').textContent = `${currentExample + 1} / ${totalExamples}`;
+    }
+
     // Cipher functions
     function rot13(str) {
       return str.replace(/[a-zA-Z]/g, function(c) {
