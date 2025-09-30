@@ -790,7 +790,7 @@ code {
 /* Left and right columns - collapsed only if content is long */
 .example-row > div:nth-child(1) > p.collapsible,
 .example-row > div:nth-child(3) > p.collapsible {
-  max-height: 12em !important;
+  max-height: 8em !important;
   overflow: hidden !important;
   position: relative;
 }
