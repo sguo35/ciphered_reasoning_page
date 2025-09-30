@@ -647,9 +647,9 @@ code {
     font-size: 1rem;
   }
 
-  /* Fix examples section for mobile */
-  .example-row {
-    grid-template-columns: 1fr !important;
+  /* Fix examples section for mobile - stack columns into rows when visible */
+  .example-row[style*="display: flex"] {
+    flex-direction: column !important;
     gap: 1rem !important;
   }
 
@@ -728,6 +728,86 @@ code {
   .publication-header .hero-body {
     padding: 4rem 2rem 3rem;
   }
+}
+
+/* Expandable content for example cards */
+.example-row > div > p,
+.example-row > div > div p {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Middle column (cipher text) - default collapsed */
+.example-row > div:nth-child(2) > p.collapsible {
+  max-height: 3em;
+  overflow: hidden;
+  position: relative;
+}
+
+.example-row > div:nth-child(2) > p.collapsible.expanded {
+  max-height: none;
+}
+
+.example-row > div:nth-child(2) > p.collapsible:not(.expanded)::after {
+  content: '... (click to expand)';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to right, transparent, var(--background-secondary) 20%);
+  padding-left: 3rem;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* Middle column translation section - default collapsed */
+.example-row > div:nth-child(2) > div p.collapsible {
+  max-height: 8em;
+  overflow: hidden;
+  position: relative;
+}
+
+.example-row > div:nth-child(2) > div p.collapsible.expanded {
+  max-height: none;
+}
+
+.example-row > div:nth-child(2) > div p.collapsible:not(.expanded)::after {
+  content: '... (click to expand)';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to right, transparent, var(--background-secondary) 20%);
+  padding-left: 3rem;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* Left and right columns - collapsed only if content is long */
+.example-row > div:nth-child(1) > p.collapsible,
+.example-row > div:nth-child(3) > p.collapsible {
+  max-height: 12em !important;
+  overflow: hidden !important;
+  position: relative;
+}
+
+.example-row > div:nth-child(1) > p.collapsible.expanded,
+.example-row > div:nth-child(3) > p.collapsible.expanded {
+  max-height: none !important;
+}
+
+.example-row > div:nth-child(1) > p.collapsible:not(.expanded)::after,
+.example-row > div:nth-child(3) > p.collapsible:not(.expanded)::after {
+  content: '... (click to expand)';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: var(--background-secondary);
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-align: right;
+  pointer-events: none;
+  display: block;
 }
 
 /* Animation for page load */
