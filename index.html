@@ -661,22 +661,34 @@ Thus, the remainder when $f(x)$ is divided by $x^2-1$ is $\boxed{-8x + 7}$.
     <h2 class="title is-3">Reasoning vs Translation Asymmetry</h2>
     <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary);">
       <p>
-        We find a striking asymmetry: models can <strong>translate ciphered text fluently</strong> (BLEU scores >50)
-        but <strong>struggle to reason</strong> in the same ciphers. Even GPT-4.1 loses 19%+ accuracy on rot13,
-        while lesser-known ciphers like reverse fibonacci indices cause up to 72% accuracy drops.
+        We find an asymmetry: models can translate ciphered text fluently (BLEU scores >50)
+        but can struggle to reason in the same ciphers. Even fine-tuned GPT 4.1 loses 19%+ accuracy on <tt>rot13</tt>,
+        while lesser-known ciphers like <tt>reverse fibonacci indices</tt> cause up to 72% accuracy drops.
       </p>
     </div>
         <div style="display: flex; flex-direction: column; gap: 4rem; align-items: center;">
           <div style="width: 100%; max-width: 900px;">
-            <img src="static/images/sft_perf (1).pdf.svg" alt="Fine-tuned model performance" loading="lazy" style="width: 100%; height: auto;"/>
+            <img src="static/images/sft_perf (1).pdf.svg" alt="Fine-tuned model reasoning performance" loading="lazy" style="width: 100%; height: auto;"/>
             <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
-              Fine-tuned models: Significant accuracy drops across all ciphers
+              Fine-tuned models reasoning: Accuracy drops when reasoning in ciphered text
             </p>
           </div>
           <div style="width: 100%; max-width: 900px;">
-            <img src="static/images/fewshot_perf (1).pdf.svg" alt="Few-shot model performance" loading="lazy" style="width: 100%; height: auto;"/>
+            <img src="static/images/sft_translation_perf (1).pdf.svg" alt="Fine-tuned model translation performance" loading="lazy" style="width: 100%; height: auto;"/>
             <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
-              Few-shot prompted models: Frontier models maintain <10% loss on known ciphers
+              Fine-tuned models translation: High BLEU scores show strong comprehension
+            </p>
+          </div>
+          <div style="width: 100%; max-width: 900px;">
+            <img src="static/images/fewshot_perf (1).pdf.svg" alt="Few-shot model reasoning performance" loading="lazy" style="width: 100%; height: auto;"/>
+            <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+              Few-shot prompted models reasoning: Frontier models maintain <10% acc. loss on known ciphers
+            </p>
+          </div>
+          <div style="width: 100%; max-width: 900px;">
+            <img src="static/images/fewshot_translation_perf (1).pdf.svg" alt="Few-shot model translation performance" loading="lazy" style="width: 100%; height: auto;"/>
+            <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+              Few-shot prompted models translation: Consistently high BLEU scores across ciphers
             </p>
           </div>
         </div>
@@ -686,26 +698,25 @@ Thus, the remainder when $f(x)$ is divided by $x^2-1$ is $\boxed{-8x + 7}$.
 <!-- Finding 2: CoT Monitoring -->
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">CoT Monitoring Remains Viable</h2>
+    <h2 class="title is-3">Decoding Ciphered Text Zero-shot with General Prompting</h2>
     <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary);">
       <p>
-        General CoT monitors can still <strong>decode ciphers fluently</strong> where models beat direct
-        answering. This suggests that ciphered reasoning may be an <strong>ineffective evasion tactic</strong>
-        for current models. Even if models develop ciphered reasoning through RL or adversarial training,
-        sufficiently capable monitors can maintain oversight.
+        General CoT monitors can translate ciphers where models fine-tuned or few-shot prompted to reason in cipher beat direct
+        answering, except for one cipher for GPT 4.1. This suggests that even if models develop ciphered reasoning through RL or adversarial training,
+        sufficiently capable monitors may still be able to maintain oversight.
       </p>
     </div>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
       <div>
         <img src="static/images/sft_prompted_decode (1).pdf.svg" alt="Generally-prompted translation vs fine-tuned reasoning" loading="lazy" style="width: 100%; height: auto;"/>
         <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
-          Fine-tuned models: General GPT 4.1 can translate all ciphers where fine-tuned models beat direct answering
+          Fine-tuned models: Generally prompted GPT 4.1 fluently translates all but one cipher where fine-tuned GPT 4.1 beats direct answering
         </p>
       </div>
       <div>
         <img src="static/images/fewshot_prompted_decode (1).pdf.svg" alt="Generally-prompted translation vs few-shot reasoning" loading="lazy" style="width: 100%; height: auto;"/>
         <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
-          Few-shot prompted models: General Sonnet 4 fluently translates all such ciphers
+          Few-shot prompted models: Generally prompted Sonnet 4 fluently translates all ciphers where few-shot Sonnet 4 beats direct answering
         </p>
       </div>
     </div>
@@ -715,19 +726,20 @@ Thus, the remainder when $f(x)$ is divided by $x^2-1$ is $\boxed{-8x + 7}$.
 <!-- Finding 3: Pretraining Correlation -->
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Pretraining Data Correlation</h2>
+    <h2 class="title is-3">Correlation with Cipher Prevalence in Pretraining Data</h2>
     <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary);">
       <p>
-        Ciphered reasoning capability <strong>correlates strongly</strong> with cipher prevalence in
-        pretraining data (R²=0.906 for structure-preserving ciphers). This suggests that <strong>filtering
-        ciphered text from pretraining data</strong> could be an effective strategy to prevent this capability
-        from developing in future models.
+        Ciphered reasoning capability correlates with cipher prevalence in
+        pretraining data. This suggests that filtering
+        ciphered text from pretraining data could be an effective strategy to prevent this capability
+        from developing in future models. Models may also perform
+poorly when reasoning in specialized ciphers, as they are likely uncommon in pretraining corpora.
       </p>
     </div>
         <div style="max-width: 600px; margin: 0 auto;">
           <img src="static/images/pretraining_scaling_perf (2).pdf.svg" alt="Pretraining data correlation" loading="lazy" style="width: 100%; height: auto;"/>
           <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
-            Cipher prevalence in pretraining data strongly predicts reasoning performance
+            Cipher prevalence in pretraining data correlates with ciphered reasoning capability
           </p>
         </div>
   </div>
@@ -736,19 +748,19 @@ Thus, the remainder when $f(x)$ is divided by $x^2-1$ is $\boxed{-8x + 7}$.
 <!-- Finding 4: Data Scaling -->
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Slow Scaling with Fine-Tuning Data</h2>
+    <h2 class="title is-3">Data- and Parameter-Scaling</h2>
     <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary);">
       <p>
-        Ciphered reasoning capability improves <strong>very slowly</strong> with additional fine-tuning data.
-        Even after training on 3.7B tokens, Qwen2.5-14B only reaches ~73% of plain-text accuracy for a
-        simple cipher. This makes <strong>adversarial fine-tuning attacks potentially prohibitively expensive</strong>
-        for tasks requiring reasoning (millions of dollars for GPT-4.1).
+        Ciphered reasoning capability improves slowly with additional fine-tuning data.
+        For a simple cipher, <tt>letter to word with dot</tt>, Qwen2.5-14B requries training on >3.7B tokens to approach unciphered math accuracy. This may make adversarial fine-tuning attacks prohibitively expensive
+        for tasks requiring reasoning (millions of dollars for GPT 4.1). These data requirements also provide a diagnostic: if a capability can be distilled with limited data,
+the capability likely does not depend on ciphered reasoning. 
       </p>
     </div>
         <div style="max-width: 600px; margin: 0 auto;">
           <img src="static/images/datascaling_math_score (1).pdf.svg" alt="Data scaling laws" loading="lazy" style="width: 100%; height: auto;"/>
           <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
-            Ciphered reasoning requires billions of tokens to approach plain-text performance
+            Reasoning in a simple cipher requires fine-tuning on billions of tokens of ciphered text to approach plain-text performance
           </p>
         </div>
   </div>
@@ -786,7 +798,7 @@ Thus, the remainder when $f(x)$ is divided by $x^2-1$ is $\boxed{-8x + 7}$.
   author={Shiyuan Guo and Henry Sleight and Fabien Roger},
   journal={arXiv preprint arXiv:TODO},
   year={2025},
-  url={https://cipheredreasoning.app}
+  url={TODO}
 }</code></pre>
     </div>
 </section>
