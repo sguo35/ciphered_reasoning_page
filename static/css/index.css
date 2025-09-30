@@ -667,6 +667,12 @@ code {
     gap: 2rem !important;
   }
 
+  /* Fix side-by-side plots in CoT Monitoring section for mobile */
+  .section div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
   /* Ensure container doesn't overflow */
   .container.is-max-desktop {
     max-width: 100% !important;

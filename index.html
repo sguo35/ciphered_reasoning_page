@@ -57,8 +57,8 @@
   <title>All Code, No Thought: Language Models Struggle to Reason in Ciphered Language</title>
   
   <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.png">
+  <link rel="apple-touch-icon" href="static/images/favicon.png">
   
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -488,7 +488,7 @@ Find the maximum value of
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Reasoning vs Translation Asymmetry</h2>
-    <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary); max-width: 800px;">
+    <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary);">
       <p>
         We find a striking asymmetry: models can <strong>translate ciphered text fluently</strong> (BLEU scores >50)
         but <strong>struggle to reason</strong> in the same ciphers. Even GPT-4.1 loses 19%+ accuracy on rot13,
@@ -512,11 +512,40 @@ Find the maximum value of
   </div>
 </section>
 
-<!-- Finding 2: Pretraining Correlation -->
+<!-- Finding 2: CoT Monitoring -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">CoT Monitoring Remains Viable</h2>
+    <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary);">
+      <p>
+        General CoT monitors can still <strong>decode ciphers fluently</strong> where models beat direct
+        answering. This suggests that ciphered reasoning may be an <strong>ineffective evasion tactic</strong>
+        for current models. Even if models develop ciphered reasoning through RL or adversarial training,
+        sufficiently capable monitors can maintain oversight.
+      </p>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+      <div>
+        <img src="static/images/sft_prompted_decode (1).pdf.svg" alt="Generally-prompted translation vs fine-tuned reasoning" loading="lazy" style="width: 100%; height: auto;"/>
+        <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+          Fine-tuned models: General GPT 4.1 can translate all ciphers where fine-tuned models beat direct answering
+        </p>
+      </div>
+      <div>
+        <img src="static/images/fewshot_prompted_decode (1).pdf.svg" alt="Generally-prompted translation vs few-shot reasoning" loading="lazy" style="width: 100%; height: auto;"/>
+        <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+          Few-shot prompted models: General Sonnet 4 fluently translates all such ciphers
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Finding 3: Pretraining Correlation -->
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Pretraining Data Correlation</h2>
-    <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary); max-width: 800px;">
+    <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary);">
       <p>
         Ciphered reasoning capability <strong>correlates strongly</strong> with cipher prevalence in
         pretraining data (R²=0.906 for structure-preserving ciphers). This suggests that <strong>filtering
@@ -524,7 +553,7 @@ Find the maximum value of
         from developing in future models.
       </p>
     </div>
-        <div style="max-width: 800px; margin: 0 auto;">
+        <div style="max-width: 600px; margin: 0 auto;">
           <img src="static/images/pretraining_scaling_perf (2).pdf.svg" alt="Pretraining data correlation" loading="lazy" style="width: 100%; height: auto;"/>
           <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
             Cipher prevalence in pretraining data strongly predicts reasoning performance
@@ -533,11 +562,11 @@ Find the maximum value of
   </div>
 </section>
 
-<!-- Finding 3: Data Scaling -->
+<!-- Finding 4: Data Scaling -->
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Slow Scaling with Fine-Tuning Data</h2>
-    <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary); max-width: 800px;">
+    <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary);">
       <p>
         Ciphered reasoning capability improves <strong>very slowly</strong> with additional fine-tuning data.
         Even after training on 3.7B tokens, Qwen2.5-14B only reaches ~73% of plain-text accuracy for a
@@ -545,27 +574,12 @@ Find the maximum value of
         for tasks requiring reasoning (millions of dollars for GPT-4.1).
       </p>
     </div>
-        <div style="max-width: 800px; margin: 0 auto;">
+        <div style="max-width: 600px; margin: 0 auto;">
           <img src="static/images/datascaling_math_score (1).pdf.svg" alt="Data scaling laws" loading="lazy" style="width: 100%; height: auto;"/>
           <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
             Ciphered reasoning requires billions of tokens to approach plain-text performance
           </p>
         </div>
-  </div>
-</section>
-
-<!-- Finding 4: CoT Monitoring -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">CoT Monitoring Remains Viable</h2>
-    <div class="content" style="font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); max-width: 800px;">
-      <p>
-        General CoT monitors can still <strong>decode ciphers fluently</strong> where models beat direct
-        answering. This suggests that ciphered reasoning may be an <strong>ineffective evasion tactic</strong>
-        for current models. Even if models develop ciphered reasoning through RL or adversarial training,
-        sufficiently capable monitors can maintain oversight.
-      </p>
-    </div>
   </div>
 </section>
 
