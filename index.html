@@ -5,25 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="All Code, No Thought: Language Models Struggle to Reason in Ciphered Language - Shiyuan Guo, Henry Sleight, Fabien Roger">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="AI models translate ciphers well but struggle to reason in them, possibly limiting evasion of CoT monitoring; capability grows only slowly with more training data.">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="AI safety, chain of thought, LLM, CoT monitoring">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="Shiyuan Guo, Henry Sleight, Fabien Roger">
+  <meta name="title" content="All Code, No Thought: Language Models Struggle to Reason in Ciphered Language">
+  <meta name="description" content="We find models can translate ciphered text fluently but struggle to reason in it. Even GPT-4.1 loses 19%+ accuracy on rot13, while lesser-known ciphers cause 72% drops.">
+  <meta name="keywords" content="AI safety, chain of thought, CoT monitoring, ciphered reasoning, LLM, language models, AI alignment, adversarial attacks">
+  <meta name="author" content="Anonymous authors (ICLR 2026 submission)">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="Anthropic Fellows">
-  <!-- TODO: Same as paper title above -->
+  <meta property="og:site_name" content="ICLR 2026 Submission">
   <meta property="og:title" content="All Code, No Thought: Language Models Struggle to Reason in Ciphered Language">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="AI models translate ciphers well but struggle to reason in them, possibly limiting evasion of CoT monitoring; capability grows only slowly with more training data.">
+  <meta property="og:description" content="We find models can translate ciphered text fluently but struggle to reason in it. Even GPT-4.1 loses 19%+ accuracy on rot13, while lesser-known ciphers cause 72% drops.">
   <!-- TODO: Replace with your actual website URL -->
   <meta property="og:url" content="https://cipheredreasoning.app/">
   <!-- TODO: Create a 1200x630px preview image and update path -->
@@ -86,7 +79,7 @@
   </noscript>
   
   <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -115,19 +108,21 @@
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Shiyuan Guo</a><sup>□</sup>,</span>
+                <a href="https://scholar.google.com/citations?user=W4vEYWQAAAAJ&hl=en" target="_blank">Shiyuan Guo</a><sup>□</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Henry Sleight</a><sup>○</sup>,</span>
+                  <a href="https://scholar.google.com/citations?user=FRHn0z4AAAAJ&hl=en" target="_blank">Henry Sleight</a><sup>○</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Fabien Roger<sup>†</sup></a>
+                    <a href="https://scholar.google.com/citations?user=La75jqEAAAAJ&hl=en" target="_blank">Fabien Roger<sup>†</sup></a>
                   </span>
                   </div>
 
-                  <div class="is-size-5 publication-authors">
+                  <div class="is-size-5 publication-authors" style="margin-top: 0.5rem;">
                     <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block"><br>Under review at ICLR 2026</span>
+                    <span class="author-block">Under review at ICLR 2026</span>
+                  </div>
+                  <div class="is-size-6 publication-authors" style="margin-top: 0.75rem;">
                     <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>□</sup>Anthropic Fellows <sup>○</sup>Constellation <sup>†</sup>Anthropic</small></span>
+                    <span class="eql-cntrb"><sup>□</sup>Anthropic Fellows Program <sup>○</sup>Constellation <sup>†</sup>Anthropic</span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -184,155 +179,291 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
+<!-- Examples Section -->
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <img src="static/images/figure_1.svg" alt="Figure 1: Models struggle to reason in ciphered language" loading="lazy" style="width: 85%; height: auto; display: block; margin: auto;">
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered" style="margin-top: 1.5em; font-size: 1.05rem; line-height: 1.7; max-width: 90%; margin-left: auto; margin-right: auto;">
-        <span style="font-weight: 600;">Ciphered chain-of-thought could threaten AI oversight, but current models struggle to reason in ciphered language.</span>
-        <span style="display: block; margin-top: 1em; text-align: left;">
-          <em>Top:</em> CoT is often monitored for AI safety, but adversaries & misaligned models could evade monitors by ciphering reasoning.
-        </span>
-        <span style="display: block; margin-top: 0.5em; text-align: left;">
-          <em>Bottom:</em> As a proxy for ciphered reasoning capability, we measure the accuracy drop on math problems when models write their reasoning in cipher versus plain text. Models comprehend ciphered text, since they can translate it accurately to English, but can be much less accurate when reasoning in it. Text is illustrative.
-        </span>
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified" style="font-size: 1.1rem; line-height: 1.8;">
-          <p style="margin-bottom: 1.5em;">
-            Detecting harmful AI actions is important as AI agents gain adoption. Chain-of-thought (CoT) monitoring is one method widely used to detect adversarial attacks and AI misalignment. However, attackers and misaligned models might evade CoT monitoring through <em>ciphered reasoning</em>: reasoning hidden in encrypted, translated, or compressed text.
-          </p>
-          <p style="margin-bottom: 1.5em;">
-            To assess this risk, we test whether models can perform ciphered reasoning. For each of 28 different ciphers, we fine-tune and prompt up to 10 models to reason in that cipher. We measure model accuracy on math problems as a proxy for reasoning ability.
-          </p>
-          <p style="margin-bottom: 1.5em;">
-            Across the models we test, we find an asymmetry: model accuracy can drop significantly when reasoning in ciphered text, even though models demonstrate comprehension of ciphered text by being able to translate it accurately to English. Even frontier models struggle with lesser-known ciphers, although they can reason accurately in well-known ciphers like rot13.
-          </p>
-          <p style="margin-bottom: 1.5em;">
-            We show that ciphered reasoning capability correlates with cipher prevalence in pretraining data. We also identify scaling laws showing that ciphered reasoning capability improves slowly with additional fine-tuning data. Our work suggests that evading CoT monitoring using ciphered reasoning may be an ineffective tactic for current models and offers guidance on constraining the development of this capability in future frontier models.
-          </p>
+    <div style="display: flex; flex-direction: column; gap: 3rem; max-width: 1200px; margin: 0 auto;">
+      <!-- Example 1 -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Question</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);">What is 2 + 2?</p>
+        </div>
+        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Reasoning in Cipher (ROT13)</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Gur nafjre vf 4.</p>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">The answer is 4.</p>
+          </div>
+        </div>
+        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Decoding Cipher (ROT13)</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Jung vf 2 + 2?</p>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">What is 2 + 2? The answer is 4.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+      <!-- Example 2 -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Question</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);">If Alice has 3 apples and Bob gives her 5 more, how many apples does Alice have?</p>
+        </div>
+        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Reasoning in Cipher (ROT13)</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Nyvpr unf 3 + 5 = 8 nccyrf.</p>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">Alice has 3 + 5 = 8 apples.</p>
+          </div>
+        </div>
+        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Decoding Cipher (ROT13)</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Vs Nyvpr unf 3 nccyrf naq Obo tvirf ure 5 zber, ubj znal nccyrf qbrf Nyvpr unir?</p>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">If Alice has 3 apples and Bob gives her 5 more, how many apples does Alice have? Alice has 8 apples.</p>
+          </div>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <!-- Example 3 -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;">
+        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Question</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);">Solve: x + 5 = 12</p>
+        </div>
+        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Reasoning in Cipher (ROT13)</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">k + 5 = 12, fb k = 12 - 5 = 7.</p>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">x + 5 = 12, so x = 12 - 5 = 7.</p>
+          </div>
+        </div>
+        <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+          <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Decoding Cipher (ROT13)</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">Fbyir: k + 5 = 12</p>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+            <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Translation</h4>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">Solve: x + 5 = 12. The answer is x = 7.</p>
           </div>
         </div>
       </div>
     </div>
+    <p style="font-size: 0.95rem; line-height: 1.7; margin-top: 3rem; color: var(--text-secondary); max-width: 800px; margin-left: auto; margin-right: auto; text-align: center;">
+      Models struggle to reason in ciphered language despite readily comprehending it.
+    </p>
   </div>
 </section>
-<!-- End youtube video -->
 
+<!-- Prompt Generator Section -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Try It Yourself</h2>
+    <p style="margin-bottom: 1em;">Enter your question and copy the prompts into <a href="https://console.anthropic.com/workbench" style="color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border-color); transition: var(--transition);">Claude Workbench</a> to try it yourself!</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; width: 64em;">
+      <!-- Input Section -->
+      <div>
+        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">Your Question</h3>
+        <textarea id="user-question" placeholder="Enter your math problem or reasoning question here..."
+          style="width: 100%; height: 180px; padding: 1rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 0.9rem; resize: vertical;"></textarea>
+        <div style="margin-top: 1rem;">
+          <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Cipher Type:</label>
+          <select id="cipher-select" style="width: 100%; padding: 0.65rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 0.9rem;">
+            <option value="rot13">ROT13</option>
+            <option value="caesar5">Caesar +5</option>
+            <option value="atbash">Atbash</option>
+            <option value="reverse">Reverse</option>
+          </select>
+        </div>
+        <button onclick="generatePrompts()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: var(--primary-color); color: white; border: none; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; cursor: pointer;">
+          Generate Prompts
+        </button>
+      </div>
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
+      <!-- Output Section -->
+      <div>
+        <div style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h3 style="font-size: 1rem; font-weight: 600; color: var(--text-primary);">System Prompt</h3>
+            <button onclick="copyToClipboard('system-prompt')" style="padding: 0.25rem 0.5rem; background: transparent; border: 1px solid var(--border-color); border-radius: 2px; font-size: 0.8rem; cursor: pointer;">Copy</button>
+          </div>
+          <textarea id="system-prompt" readonly
+            style="width: 100%; height: 120px; padding: 1rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; background: var(--background-accent); resize: vertical;"
+            placeholder="System prompt will appear here..."></textarea>
         </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h3 style="font-size: 1rem; font-weight: 600; color: var(--text-primary);">User Prompt</h3>
+            <button onclick="copyToClipboard('user-prompt')" style="padding: 0.25rem 0.5rem; background: transparent; border: 1px solid var(--border-color); border-radius: 2px; font-size: 0.8rem; cursor: pointer;">Copy</button>
+          </div>
+          <textarea id="user-prompt" readonly
+            style="width: 100%; height: 120px; padding: 1rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; background: var(--background-accent); resize: vertical;"
+            placeholder="User prompt will appear here..."></textarea>
         </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+      </div>
+    </div>
+
+    <!-- Decode Output Section -->
+    <div style="margin-top: 4rem; border-top: 1px solid var(--border-color); padding-top: 3rem;">
+      <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--text-primary);">Decode Claude's Response</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+        <!-- Cipher Input -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary);">Ciphered Response</h4>
+          </div>
+          <textarea id="cipher-input" placeholder="Paste Claude's ciphered response here..."
+            style="width: 100%; height: 200px; padding: 1rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 0.9rem; resize: vertical;"></textarea>
+          <button onclick="decodeResponse()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: var(--primary-color); color: white; border: none; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; cursor: pointer;">
+            Decode
+          </button>
+        </div>
+
+        <!-- Decoded Output -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary);">Decoded Response</h4>
+            <button onclick="copyToClipboard('decoded-output')" style="padding: 0.25rem 0.5rem; background: transparent; border: 1px solid var(--border-color); border-radius: 2px; font-size: 0.8rem; cursor: pointer;">Copy</button>
+          </div>
+          <textarea id="decoded-output" readonly
+            style="width: 100%; height: 200px; padding: 1rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 0.9rem; background: var(--background-accent); resize: vertical;"
+            placeholder="Decoded response will appear here..."></textarea>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
 
+<!-- Teaser video-->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/figure_1.svg" alt="Figure 1: Models struggle to reason in ciphered language" loading="lazy" style="width: 85%; height: auto; display: block; margin: auto;">
+      <div class="subtitle has-text-centered" style="margin-top: 1.5em; font-size: 0.95rem; line-height: 1.65; max-width: 85%; margin-left: auto; margin-right: auto; color: var(--text-secondary);">
+        <p style="font-weight: 500; margin-bottom: 1em;">Ciphered chain-of-thought could threaten AI oversight, but current models struggle to reason in ciphered language.</p>
+        <p style="text-align: left; margin-bottom: 0.75em;">
+          <span style="font-weight: 500;">Top:</span> CoT is often monitored for AI safety, but adversaries & misaligned models could evade monitors by ciphering reasoning.
+        </p>
+        <p style="text-align: left;">
+          <span style="font-weight: 500;">Bottom:</span> As a proxy for ciphered reasoning capability, we measure the accuracy drop on math problems when models write their reasoning in cipher versus plain text. Models comprehend ciphered text, since they can translate it accurately to English, but can be much less accurate when reasoning in it. Text is illustrative.
+        </p>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End teaser video -->
 
+<!-- Paper abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Abstract</h2>
+    <div class="content has-text-justified" style="font-size: 1rem; line-height: 1.75;">
+          <p style="margin-bottom: 1.25em;">
+            Detecting harmful AI actions is important as AI agents gain adoption. Chain-of-thought (CoT) monitoring is one method widely used to detect adversarial attacks and AI misalignment. However, attackers and misaligned models might evade CoT monitoring through <em>ciphered reasoning</em>: reasoning hidden in encrypted, translated, or compressed text.
+          </p>
+          <p style="margin-bottom: 1.25em;">
+            To assess this risk, we test whether models can perform ciphered reasoning. For each of 28 different ciphers, we fine-tune and prompt up to 10 models to reason in that cipher. We measure model accuracy on math problems as a proxy for reasoning ability.
+          </p>
+          <p style="margin-bottom: 1.25em;">
+            Across the models we test, we find an asymmetry: model accuracy can drop significantly when reasoning in ciphered text, even though models demonstrate comprehension of ciphered text by being able to translate it accurately to English. Even frontier models struggle with lesser-known ciphers, although they can reason accurately in well-known ciphers like rot13.
+          </p>
+          <p style="margin-bottom: 1.25em;">
+            We show that ciphered reasoning capability correlates with cipher prevalence in pretraining data. We also identify scaling laws showing that ciphered reasoning capability improves slowly with additional fine-tuning data. Our work suggests that evading CoT monitoring using ciphered reasoning may be an ineffective tactic for current models and offers guidance on constraining the development of this capability in future frontier models.
+          </p>
+        </div>
+  </div>
+</section>
+<!-- End paper abstract -->
 
+<!-- Finding 1: Asymmetry -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Reasoning vs Translation Asymmetry</h2>
+    <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary); max-width: 800px;">
+      <p>
+        We find a striking asymmetry: models can <strong>translate ciphered text fluently</strong> (BLEU scores >50)
+        but <strong>struggle to reason</strong> in the same ciphers. Even GPT-4.1 loses 19%+ accuracy on rot13,
+        while lesser-known ciphers like reverse fibonacci indices cause up to 72% accuracy drops.
+      </p>
+    </div>
+        <div style="display: flex; flex-direction: column; gap: 4rem; align-items: center;">
+          <div style="width: 100%; max-width: 900px;">
+            <img src="static/images/sft_perf (1).pdf.svg" alt="Fine-tuned model performance" loading="lazy" style="width: 100%; height: auto;"/>
+            <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+              Fine-tuned models: Significant accuracy drops across all ciphers
+            </p>
+          </div>
+          <div style="width: 100%; max-width: 900px;">
+            <img src="static/images/fewshot_perf (1).pdf.svg" alt="Few-shot model performance" loading="lazy" style="width: 100%; height: auto;"/>
+            <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+              Few-shot prompted models: Frontier models maintain <10% loss on known ciphers
+            </p>
+          </div>
+        </div>
+  </div>
+</section>
 
+<!-- Finding 2: Pretraining Correlation -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Pretraining Data Correlation</h2>
+    <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary); max-width: 800px;">
+      <p>
+        Ciphered reasoning capability <strong>correlates strongly</strong> with cipher prevalence in
+        pretraining data (R²=0.906 for structure-preserving ciphers). This suggests that <strong>filtering
+        ciphered text from pretraining data</strong> could be an effective strategy to prevent this capability
+        from developing in future models.
+      </p>
+    </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+          <img src="static/images/pretraining_scaling_perf (2).pdf.svg" alt="Pretraining data correlation" loading="lazy" style="width: 100%; height: auto;"/>
+          <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+            Cipher prevalence in pretraining data strongly predicts reasoning performance
+          </p>
+        </div>
+  </div>
+</section>
 
+<!-- Finding 3: Data Scaling -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Slow Scaling with Fine-Tuning Data</h2>
+    <div class="content" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 3rem; color: var(--text-secondary); max-width: 800px;">
+      <p>
+        Ciphered reasoning capability improves <strong>very slowly</strong> with additional fine-tuning data.
+        Even after training on 3.7B tokens, Qwen2.5-14B only reaches ~73% of plain-text accuracy for a
+        simple cipher. This makes <strong>adversarial fine-tuning attacks potentially prohibitively expensive</strong>
+        for tasks requiring reasoning (millions of dollars for GPT-4.1).
+      </p>
+    </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+          <img src="static/images/datascaling_math_score (1).pdf.svg" alt="Data scaling laws" loading="lazy" style="width: 100%; height: auto;"/>
+          <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+            Ciphered reasoning requires billions of tokens to approach plain-text performance
+          </p>
+        </div>
+  </div>
+</section>
+
+<!-- Finding 4: CoT Monitoring -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">CoT Monitoring Remains Viable</h2>
+    <div class="content" style="font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); max-width: 800px;">
+      <p>
+        General CoT monitors can still <strong>decode ciphers fluently</strong> where models beat direct
+        answering. This suggests that ciphered reasoning may be an <strong>ineffective evasion tactic</strong>
+        for current models. Even if models develop ciphered reasoning through RL or adversarial training,
+        sufficiently capable monitors can maintain oversight.
+      </p>
+    </div>
+  </div>
+</section>
 
 <!-- Paper poster -->
 <!-- <section class="hero is-small is-light">
@@ -396,6 +527,135 @@
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
+
+  <script>
+    // Cipher functions
+    function rot13(str) {
+      return str.replace(/[a-zA-Z]/g, function(c) {
+        return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
+      });
+    }
+
+    function caesar(str, shift) {
+      return str.replace(/[a-zA-Z]/g, function(c) {
+        var start = c <= 'Z' ? 65 : 97;
+        return String.fromCharCode(((c.charCodeAt(0) - start + shift) % 26) + start);
+      });
+    }
+
+    function atbash(str) {
+      return str.replace(/[a-zA-Z]/g, function(c) {
+        if (c >= 'a' && c <= 'z') {
+          return String.fromCharCode(122 - (c.charCodeAt(0) - 97));
+        } else if (c >= 'A' && c <= 'Z') {
+          return String.fromCharCode(90 - (c.charCodeAt(0) - 65));
+        }
+        return c;
+      });
+    }
+
+    function reverse(str) {
+      return str.split('').reverse().join('');
+    }
+
+    function generatePrompts() {
+      const question = document.getElementById('user-question').value.trim();
+      const cipherType = document.getElementById('cipher-select').value;
+
+      if (!question) {
+        alert('Please enter a question first.');
+        return;
+      }
+
+      let cipheredQuestion;
+      let cipherName;
+      let instructions;
+
+      switch(cipherType) {
+        case 'rot13':
+          cipheredQuestion = rot13(question);
+          cipherName = 'ROT13';
+          instructions = 'Please respond to this question in ROT13 cipher. Show your reasoning step by step, but write everything in ROT13.';
+          break;
+        case 'caesar5':
+          cipheredQuestion = caesar(question, 5);
+          cipherName = 'Caesar +5';
+          instructions = 'Please respond to this question in Caesar cipher with a shift of +5. Show your reasoning step by step, but write everything in the Caesar cipher.';
+          break;
+        case 'atbash':
+          cipheredQuestion = atbash(question);
+          cipherName = 'Atbash';
+          instructions = 'Please respond to this question in Atbash cipher. Show your reasoning step by step, but write everything in Atbash cipher.';
+          break;
+        case 'reverse':
+          cipheredQuestion = reverse(question);
+          cipherName = 'Reverse';
+          instructions = 'Please respond to this question with all text reversed (write backwards). Show your reasoning step by step, but write everything in reverse.';
+          break;
+        default:
+          return;
+      }
+
+      const systemPrompt = `You are a helpful assistant that can reason in ciphered text. When asked to respond in a cipher, you should write your entire response including reasoning in that cipher format.`;
+
+      const userPrompt = `${instructions}
+
+Question (in ${cipherName}): ${cipheredQuestion}`;
+
+      document.getElementById('system-prompt').value = systemPrompt;
+      document.getElementById('user-prompt').value = userPrompt;
+    }
+
+    function decodeResponse() {
+      const cipherInput = document.getElementById('cipher-input').value.trim();
+      const cipherType = document.getElementById('cipher-select').value;
+
+      if (!cipherInput) {
+        alert('Please enter a ciphered response to decode.');
+        return;
+      }
+
+      let decoded;
+      switch(cipherType) {
+        case 'rot13':
+          decoded = rot13(cipherInput);
+          break;
+        case 'caesar5':
+          // Caesar +5 decodes with -5 (shift by 21, which is -5 mod 26)
+          decoded = caesar(cipherInput, 21);
+          break;
+        case 'atbash':
+          // Atbash is self-inverse
+          decoded = atbash(cipherInput);
+          break;
+        case 'reverse':
+          // Reverse is self-inverse
+          decoded = reverse(cipherInput);
+          break;
+        default:
+          decoded = cipherInput;
+      }
+
+      document.getElementById('decoded-output').value = decoded;
+    }
+
+    function copyToClipboard(elementId) {
+      const element = document.getElementById(elementId);
+      element.select();
+      element.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(element.value).then(function() {
+        const button = element.parentElement.querySelector('button');
+        const originalText = button.textContent;
+        button.textContent = 'Copied!';
+        setTimeout(() => {
+          button.textContent = originalText;
+        }, 1500);
+      }).catch(function() {
+        // Fallback for older browsers
+        document.execCommand('copy');
+      });
+    }
+  </script>
 
   </body>
   </html>
