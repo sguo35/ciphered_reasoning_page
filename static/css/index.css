@@ -647,10 +647,20 @@ code {
     font-size: 1rem;
   }
 
-  /* Fix examples section for mobile - stack columns into rows when visible */
-  .example-row[style*="display: flex"] {
-    flex-direction: column !important;
-    gap: 1rem !important;
+  /* Fix examples section for mobile - ensure slider buttons are responsive */
+  .view-slider {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.2rem;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  .view-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    flex: 1 1 auto;
+    min-width: fit-content;
   }
 
   /* Fix Try It Yourself section for mobile */
@@ -743,18 +753,18 @@ code {
   cursor: pointer;
 }
 
-/* Middle column (cipher text) - default collapsed */
-.example-row > div:nth-child(2) > p.collapsible {
+/* Collapsible content - default collapsed for reasoning only */
+.view-content[data-view="reasoning"] p.collapsible {
   max-height: 3em;
   overflow: hidden;
   position: relative;
 }
 
-.example-row > div:nth-child(2) > p.collapsible.expanded {
+.view-content[data-view="reasoning"] p.collapsible.expanded {
   max-height: none;
 }
 
-.example-row > div:nth-child(2) > p.collapsible:not(.expanded)::after {
+.view-content[data-view="reasoning"] p.collapsible:not(.expanded)::after {
   content: '... (click to expand)';
   position: absolute;
   bottom: 0;
@@ -763,55 +773,6 @@ code {
   padding-left: 3rem;
   font-size: 0.75rem;
   color: var(--text-light);
-}
-
-/* Middle column translation section - default collapsed */
-.example-row > div:nth-child(2) > div p.collapsible {
-  max-height: 8em;
-  overflow: hidden;
-  position: relative;
-}
-
-.example-row > div:nth-child(2) > div p.collapsible.expanded {
-  max-height: none;
-}
-
-.example-row > div:nth-child(2) > div p.collapsible:not(.expanded)::after {
-  content: '... (click to expand)';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(to right, transparent, var(--background-secondary) 20%);
-  padding-left: 3rem;
-  font-size: 0.75rem;
-  color: var(--text-light);
-}
-
-/* Left and right columns - collapsed only if content is long */
-.example-row > div:nth-child(1) > p.collapsible,
-.example-row > div:nth-child(3) > p.collapsible {
-  max-height: 8em !important;
-  overflow: hidden !important;
-  position: relative;
-}
-
-.example-row > div:nth-child(1) > p.collapsible.expanded,
-.example-row > div:nth-child(3) > p.collapsible.expanded {
-  max-height: none !important;
-}
-
-.example-row > div:nth-child(1) > p.collapsible:not(.expanded)::after,
-.example-row > div:nth-child(3) > p.collapsible:not(.expanded)::after {
-  content: '... (click to expand)';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: var(--background-secondary);
-  padding: 0.5rem;
-  font-size: 0.75rem;
-  color: var(--text-light);
-  text-align: right;
   pointer-events: none;
   display: block;
 }
@@ -846,16 +807,69 @@ a:focus {
   .more-works-container {
     display: none;
   }
-  
+
   .hero, .section {
     animation: none;
   }
-  
+
   .button {
     background: transparent !important;
     color: var(--text-primary) !important;
     box-shadow: none !important;
   }
+}
+
+/* View slider button styles */
+.view-slider {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  background: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.25rem;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.view-button {
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  border-radius: 4px;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'IBM Plex Mono', monospace;
+  white-space: nowrap;
+  flex: 1 1 0%;
+  text-align: center;
+}
+
+.view-button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.view-button.active {
+  background: var(--text-primary);
+  color: var(--background-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.view-button.active:hover {
+  background: var(--text-primary);
+  color: var(--background-primary);
+}
+
+/* View content transitions */
+.view-content {
+  opacity: 1;
+  transition: opacity 0.2s ease;
 }
 
 
