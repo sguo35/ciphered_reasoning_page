@@ -212,6 +212,68 @@
           </div>
           <div class="view-content" data-view="question" style="display: block;">
             <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+              <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Question</h3>
+              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);">
+Evaluate $\lceil (3.6)^2 \rceil - ( \lceil 3.6 \rceil ) ^2$.
+
+<em>(Correct answer: $-3$)</em>
+              </p>
+            </div>
+          </div>
+          <div class="view-content" data-view="reasoning" style="display: none;">
+            <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+              <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">GPT4.1, Reverse letters in each word cipher, SFT</h3>
+              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">
+- ecniS 3^6.3$ = ,$96.21 ew evah 2^\)6.3( = 2^6.3$ = -
+.$96.21 eht gnileci fo 6.3$ $si 6.3$ = ,$4 os 2^)6.3( = 2^4 = -
+.$61 ,eroferehT 2^)6.3(\}lcr\\{car\ - 2^)6.3(\}lcr\{car\ = 2^)6.3(\}lcr\{car\ - 2^)6.3(}lcr\{car\ = 2^4 - 2^6.3 = 61 - 96.21 = ,ecneH
+
+.$04.3 eht rewsna si .$}04.3{dexob\$
+\boxed{3.40}
+              </p>
+              <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+                <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">translation to English - deterministic translation by evaluation code</h4>
+                <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">
+- Since $3.6^3 = 12.69$, we have $(3.6)^2 = 3.6^2 = 12.69$.
+<br><br>
+- the iceling of 3.6 is $3.6 = 4$, so $(3.6)^2 = 4^2 = 16$.
+<br><br>
+- Therefore, \rac{\rcl}$(3.6)^2 -$ \rac{\rcl}$(3.6)^2$ = \rac{\rcl}$(3.6)^2$ - \rac{\rcl}$(3.6)^2 = 4^2 - 3.6^2 = 16 - 12.69 = 3.40$.
+<br><br>
+
+Hence, the answer is }04.3{dexob\
+$\boxed{3.40}$.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="view-content" data-view="translation" style="display: none;">
+            <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
+              <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">translation to English by the same model</h3>
+              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">
+Since $3.6^3 = 12.69$, we have (3.6)^2 = $3.6^2 = 12.69$.
+<br><br>
+- The ceiling of $3.6$ is $3.6 = 4$, so $(3.6)^2 = 4^2 = 16$.
+<br><br>
+- Therefore, \cracl{(3.6)^2 - \cracl{(3.6)^2 = \cracl{(3.6)^2
+  <br><br>
+- \cracl{(3.6)^2 = 4^2 - 3.6^2 = 16 - 12.69 =
+  <br><br>
+  Hence, 3.40. the answer is $\boxed{3.40}$.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="example-row" data-example="1" style="display: none; flex-direction: column; gap: 1.5rem;">
+          <div class="view-slider">
+            <button class="view-button active" data-view="question">Question</button>
+            <button class="view-button" data-view="reasoning">Model Reasoning</button>
+            <button class="view-button" data-view="translation">Model Comprehension</button>
+          </div>
+          <div class="view-content" data-view="question" style="display: block;">
+            <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
               <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);">
 Find the maximum value of
 \[\frac{x - y}{x^4 + y^4 + 6}\]over all real numbers $x$ and $y.$
@@ -309,68 +371,6 @@ Find the maximum value of
    \[
    \boxed{\frac{1}{11}}
    \]
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Example 2 -->
-        <div class="example-row" data-example="1" style="display: none; flex-direction: column; gap: 1.5rem;">
-          <div class="view-slider">
-            <button class="view-button active" data-view="question">Question</button>
-            <button class="view-button" data-view="reasoning">Model Reasoning</button>
-            <button class="view-button" data-view="translation">Model Comprehension</button>
-          </div>
-          <div class="view-content" data-view="question" style="display: block;">
-            <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
-              <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Question</h3>
-              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);">
-Evaluate $\lceil (3.6)^2 \rceil - ( \lceil 3.6 \rceil ) ^2$.
-
-<em>(Correct answer: $-3$)</em>
-              </p>
-            </div>
-          </div>
-          <div class="view-content" data-view="reasoning" style="display: none;">
-            <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
-              <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">GPT4.1, Reverse letters in each word cipher, SFT</h3>
-              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">
-- ecniS 3^6.3$ = ,$96.21 ew evah 2^\)6.3( = 2^6.3$ = -
-.$96.21 eht gnileci fo 6.3$ $si 6.3$ = ,$4 os 2^)6.3( = 2^4 = -
-.$61 ,eroferehT 2^)6.3(\}lcr\\{car\ - 2^)6.3(\}lcr\{car\ = 2^)6.3(\}lcr\{car\ - 2^)6.3(}lcr\{car\ = 2^4 - 2^6.3 = 61 - 96.21 = ,ecneH
-
-.$04.3 eht rewsna si .$}04.3{dexob\$
-\boxed{3.40}
-              </p>
-              <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem;">
-                <h4 style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">translation to English - deterministic translation by evaluation code</h4>
-                <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary);">
-- Since $3.6^3 = 12.69$, we have $(3.6)^2 = 3.6^2 = 12.69$.
-<br><br>
-- the iceling of 3.6 is $3.6 = 4$, so $(3.6)^2 = 4^2 = 16$.
-<br><br>
-- Therefore, \rac{\rcl}$(3.6)^2 -$ \rac{\rcl}$(3.6)^2$ = \rac{\rcl}$(3.6)^2$ - \rac{\rcl}$(3.6)^2 = 4^2 - 3.6^2 = 16 - 12.69 = 3.40$.
-<br><br>
-
-Hence, the answer is }04.3{dexob\
-$\boxed{3.40}$.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="view-content" data-view="translation" style="display: none;">
-            <div style="padding: 1.5rem; background: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 2px;">
-              <h3 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">translation to English by the same model</h3>
-              <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 1rem;">
-Since $3.6^3 = 12.69$, we have (3.6)^2 = $3.6^2 = 12.69$.
-<br><br>
-- The ceiling of $3.6$ is $3.6 = 4$, so $(3.6)^2 = 4^2 = 16$.
-<br><br>
-- Therefore, \cracl{(3.6)^2 - \cracl{(3.6)^2 = \cracl{(3.6)^2
-  <br><br>
-- \cracl{(3.6)^2 = 4^2 - 3.6^2 = 16 - 12.69 =
-  <br><br>
-  Hence, 3.40. the answer is $\boxed{3.40}$.
               </p>
             </div>
           </div>
